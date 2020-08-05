@@ -7,16 +7,16 @@ I chose Incan Gold for this project because it involves binary decisions that we
 
 The binary decisions were treated as a machine learning problem with the correct decision predicted based on the game situation. I trained random forest models to predict the move made by the winning player based off of data for thousands of simulated games. The AIs were able to base their decisions off of a number of variables including their current score, the score that they needed to win, the current round of the game, the probability of death on the next card and the current value of their loot.
 
-![Game Predictors](https://github.com/ethankim00/IncanCold/IncanGoldTable.png)
+![Game Predictors](https://github.com/ethankim00/IncanCold/IncanGoldTable.png?raw=true)
 
 
 ## Results
 
-![Results](https://github.com/ethankim00/IncanCold/incan_gold_graph.png)
+![Results](https://github.com/ethankim00/IncanCold/incan_gold_graph.png?raw=true)
 
 Each generation was trained using the winning results from 2000 simulated games pitting previous generations against each other. Each generation showed improvement in terms of winning percentage against the previous generation and winning percentage against players making random moves. Improvement leveled off after 4 generations of training with the best AI winning 52% of 5 player games against the random players. In addition, the 4th generation AI won 33 percent of 5 player games against the 3rd generation AI indicating a significant increase in performance. By using the feature importances metric for the final random forest model we can see how the AI is making decisions. The most important predictor was loot followed by the expected value of the next card and the probability of dying. It appears that the AIs primarily made their decision based on the amount of loot they had already accumulated which makes sense given that this predictor greatly influences the opportunity cost of the next move. 
 
-![Feature Importances](https://github.com/ethankim00/IncanCold/feature_importances.png)
+![Feature Importances](https://github.com/ethankim00/IncanCold/feature_importances.png?raw=true)
 
 ## Conclusions:
 The naive approach to training players yielded solid results. The AI players showed increased performance after each generation.  This method was able to learn strategies despite having no knowledge of the rules of the game. The only reward signal for making the correct move was the moves made by the winning player. Other methods could potentially speed up training dramatically by assigning a score directly to the result of each move rather than waiting to the end of the game. The final AI was fairly challenging for a human player to beat especially since it had access to probability and expected value calculations that would be difficult for a human to compute live. However generally the human game involves more game theory and bluffing as human players interact with each other so it is difficult to compare performance. 
